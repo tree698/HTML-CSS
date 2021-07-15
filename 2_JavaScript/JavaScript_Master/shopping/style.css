@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+  background-color: lightgray;
+  text-align: center;
+}
+.wrap {
+  width: 500px;
+  margin: 50px auto;
+  background-color: #6dc3a6;
+  border-radius: 13px;
+  box-shadow: 5px 5px 5px gray;
+}
+.header {
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+  background-color: lightskyblue;
+  border-radius: 13px 13px 0 0;
+}
+.content {
+  height: 550px;
+  background-color: #eee;
+}
+.input {
+  width: 500px;
+  height: 30px;
+  border: none;
+  padding: 0;
+}
+.footer {
+  height: 70px;
+  background-color: lightskyblue;
+  border-radius: 0 0 13px 13px;
+}
+.fas fa-plus-circle {
+  font-size: 30px;
+}
