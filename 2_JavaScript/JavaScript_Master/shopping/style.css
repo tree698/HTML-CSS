@@ -15,6 +15,7 @@ body {
   height: 60px;
   line-height: 60px;
   font-size: 25px;
+  font-weight: bold;
   background-color: lightskyblue;
   border-radius: 13px 13px 0 0;
 }
@@ -23,16 +24,19 @@ body {
   background-color: #eee;
 }
 .input {
-  width: 500px;
-  height: 30px;
+  width: 470px;
+  height: 40px;
   border: none;
-  padding: 0;
+  padding: 1px 15px;
+  font-size: 18px;
 }
 .footer {
   height: 70px;
   background-color: lightskyblue;
   border-radius: 0 0 13px 13px;
 }
-.fas fa-plus-circle {
-  font-size: 30px;
+.fa-plus-circle {
+  font-size: 2.5em;
+  line-height: 70px;
+  cursor: pointer;
 }
