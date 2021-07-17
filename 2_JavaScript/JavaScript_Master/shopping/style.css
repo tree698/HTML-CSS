@@ -7,7 +7,7 @@ body {
 .wrap {
   width: 500px;
   margin: 50px auto;
-  background-color: #6dc3a6;
+  /* background-color: #6dc3a6; */
   border-radius: 13px;
   box-shadow: 5px 5px 5px gray;
 }
@@ -37,6 +37,7 @@ body {
 }
 .fa-plus-circle {
   font-size: 2.5em;
-  line-height: 70px;
+  margin-top: 12px;
+  /* line-height: 70px; */
   cursor: pointer;
 }
