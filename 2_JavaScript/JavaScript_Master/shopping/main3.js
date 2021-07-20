@@ -18,29 +18,24 @@ function onAdd() {
     input.focus();
 }
 
+// UUID
+let id = 0;  
 function createItem(text) {
     const itemRow = document.createElement('li');
     itemRow.setAttribute('class', 'item_row');
-    const item = document.createElement('div');
-    item.setAttribute('class', 'item');
-    const itemName = document.createElement('span');
-    itemName.setAttribute('class', 'item_name');
-    itemName.textContent = text;
-    const itemDelete = document.createElement('button');
-    itemDelete.setAttribute('class', 'item_delete');
-    itemDelete.innerHTML = '<i class="far fa-trash-alt"></i>'
-    itemDelete.addEventListener('click', () => {
-        items.removeChild(itemRow);
-    });
-    const itemDivider = document.createElement('div');
-    itemDivider.setAttribute('class', 'item_divider');
-
-    item.appendChild(itemName);
-    item.appendChild(itemDelete);
-    itemRow.appendChild(item);
-    itemRow.appendChild(itemDivider);
-    // items.appendChild(itemRow);
-
+    itemRow.setAttribute('data-id', id);
+    itemRow.innerHTML = `
+            <li class="item_row">
+                <div class="item">
+                    <span class="item_name">${text}</span>
+                    <button class="item_delete">
+                        <i class="far fa-trash-alt" data-id = ${id}></i>
+                    </button>
+                </div>
+                <div class="item_divider"></div>
+            </li>
+    `;
+    id++;
     return itemRow;
 };
 
@@ -53,3 +48,16 @@ input.addEventListener('keydown', (event) => {
         onAdd();
     }
 });
+
+items.addEventListener('click', event => {
+    const iid = event.target.dataset.id;
+    // if (event.target.nodeName === 'I') {
+    //   const toBeDeleted = document.querySelector(`.item_row[data-id="${iid}"]`);
+    //   toBeDeleted.remove();
+    // }
+
+    if(id) {
+        const toBeDeleted = document.querySelector(`.item_row[data-id="${iid}"]`);
+        toBeDeleted.remove();
+    }
+  });
