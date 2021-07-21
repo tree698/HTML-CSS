@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class & CallBack Function</title>
+</head>
+<body>
+    
+    <script>
+        // 0부터 하나씩 증가하면서 짝수일때마다 even을 출력하는 함수 
+        // 출력 방법은 consol과 alert으로 한다 
+
+        // 1. 클래스안의 함수에 콜백함수 적용
+        // class EvenNumber {
+        //     constructor() {
+        //         this.count = 0;
+        //     }
+        //     increase(showEven) {
+        //         this.count++;
+        //         if(this.count % 2 === 0) {
+        //             showEven(this.count);
+        //         }
+        //     }
+        // }
+
+        // function showConsol(num) {
+        //     console.log(`count: ${num} 짝수라구요`);
+        // }
+
+        // function showAlert(num) {
+        //     alert(`count: ${num} 짝수라구`);
+        // }
+
+        // const showEvenNumber = new EvenNumber();
+        // showEvenNumber.increase(showConsol);
+        // showEvenNumber.increase(showConsol);
+        // showEvenNumber.increase(showConsol);
+        // showEvenNumber.increase(showAlert);
+
+
+        // 클래스 안에 모든것을 정의하면 사용자의 컨트롤 및 재사용이 적어짐 
+
+        // 2. 클래스의 생성자에 콜백함수 적용
+        class EvenNumber {
+            constructor(showEven) {
+                this.count = 0;
+                this.callback = showEven;
+            }
+            increase() {
+                this.count++;
+                if(this.count % 2 === 0) {
+                    // 
+                    this.callback && this.callback(this.count);
+
+                    // if(this.callback) {
+                    //     this.callback(this.count);
+                    // }
+                }
+            }
+        }
+
+        function showConsol(num) {
+            console.log(`count: ${num} even`);
+        };
+        function showAlert(num) {
+            alert(`count: ${num} even`);
+        }
+
+        // 서로 다른 객체이기에 각각 count = 0부터 시작 
+        const showEvenNumber1 = new EvenNumber(showConsol);
+        const showEvenNumber2 = new EvenNumber(showAlert); 
+
+        showEvenNumber1.increase()
+        showEvenNumber1.increase()
+        showEvenNumber1.increase()
+        showEvenNumber1.increase()
+        showEvenNumber2.increase()
+        showEvenNumber2.increase()
+        showEvenNumber1.increase()
+        showEvenNumber1.increase()
+
+    </script>
+</body>
+</html>
