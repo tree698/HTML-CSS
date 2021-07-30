@@ -1,0 +1,17 @@
+
+
+.item {
+    width: 40px;
+    height: 40px;
+    background-color: lightgoldenrodyellow;
+    margin: 10px;
+}
+
+.container {
+    background-color: lightpink;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
