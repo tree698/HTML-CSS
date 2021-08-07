@@ -59,6 +59,7 @@ button {
   background-color: #fff;
   border-radius: 6px;
   margin: 3px 0;
+  visibility: hidden;
 }
 
 .game__score {
@@ -68,6 +69,7 @@ button {
   background-color: coral;
   color: #fff;
   border-radius: 50%;
+  visibility: hidden;
 }
 
 .game__field {
