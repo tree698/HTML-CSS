@@ -1,0 +1,34 @@
+window
+   => DOM
+   => BOM
+   => JavaScript
+===========================================
+
+Document Object Model (DOM)
+ - 브라우저가 어떻게 웹 페이지나 웹 어플리케이션을 분석하는지?
+ - 브라우저가 랜더링하는 순서는 ==> CSS, 브라우저 성능에 영향? 
+
+html을 브라우저에서 읽고, 
+HTML tag ==> JavaScript Node 로 변환
+
+--------------------------
+EventTarget
+   => Node (모든 노드는 event를 발생시킴)
+          =>  Document
+          =>  Element (이미지 등)
+                   => HTMLElement
+                   	=> HTMLInputElement
+                   	=> HTMLDivElement
+                   	=> ...
+	      => ... 
+          =>  Text 
+          =>  ...
+
+--------------------------
+EventTarget에는 총 3개의 method가 있다.
+  (1) EventTarget.addEventListener()
+  (2) EventTarget.removeEventListener()
+  (3) EventTarget.dispatchEvent()  => 특별한 이벤트 발행 
+
+Node Properties / Methods
+   ex) element.removeChild(element.firstChild)

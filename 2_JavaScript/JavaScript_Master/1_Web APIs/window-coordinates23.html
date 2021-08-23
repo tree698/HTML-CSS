@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Coordinates</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .special {
+            background-color: blueviolet;
+            font: #fff;
+        }
+        aside {
+            position: fixed;
+            left: 300px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <button class="movedBy">Move by 100px</button>
+        <button class="movedTo">Move to 100px</button>
+        <button class="movedToSpecial">Move to special</button>
+    </aside>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        const special = document.querySelector('.special');
+        // const rect = special.getBoundingClientRect()
+        // const x = rect.getAttribute('x');
+        // const y = rect.getAttribute('y');
+        const movedBy = document.querySelector('.movedBy');
+        const movedTo = document.querySelector('.movedTo');
+        const movedToSpecial = document.querySelector('.movedToSpecial');
+        movedBy.addEventListener('click', () => {
+            window.scrollBy({top:100, behavior:'smooth'});
+        });
+        movedTo.addEventListener('click', () => {
+            window.scrollTo(0, 100);
+        });
+        movedToSpecial.addEventListener('click', () => {
+            special.scrollIntoView();
+        });
+
+
+    </script>
+</body>
+</html>
